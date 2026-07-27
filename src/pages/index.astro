@@ -1,0 +1,56 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Card from "../components/ui/Card.astro";
+import Button from "../components/ui/Button.astro";
+---
+<BaseLayout>
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">Regional Environment & Living Information Visualization and Evaluation</p>
+      <h1>地域の暮らしを、<br />調べ、記録し、設計する。</h1>
+      <p class="lead">
+        地域住環境情報設計は、現地調査・写真資料・公的統計をもとに、
+        都市ごとの住環境を継続的に記録・整理・公開する独立研究活動です。
+      </p>
+      <div class="actions">
+        <Button href="/atlas/">都市住環境図鑑を見る</Button>
+        <Button href="/about/" variant="secondary">活動について</Button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid">
+      <Card title="都市住環境図鑑" href="/atlas/" eyebrow="Atlas">
+        単身者の暮らしやすさを、現地調査とデータから比較・記録します。
+      </Card>
+      <Card title="調査・研究" href="/research/" eyebrow="Research">
+        調査方法、先行研究、論文・発表資料を整理します。
+      </Card>
+      <Card title="個人ブログ" href="/blog/" eyebrow="Blog">
+        活動記録、制作過程、移動生活に関する記録です。
+      </Card>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding-block: clamp(5rem, 12vw, 10rem);
+    background:
+      linear-gradient(rgb(245 242 233 / 0.87), rgb(245 242 233 / 0.96)),
+      repeating-radial-gradient(circle at 80% 20%, transparent 0 22px, rgb(50 75 61 / 0.12) 23px 24px);
+  }
+
+  h1 {
+    max-width: 52rem;
+    font-size: clamp(2.6rem, 7vw, 6.3rem);
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 2rem;
+  }
+</style>

@@ -1,0 +1,38 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Card from "../../components/ui/Card.astro";
+
+const cities = (await getCollection("atlas"))
+  .filter((entry) => !entry.data.draft)
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+---
+<BaseLayout title="都市住環境図鑑">
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Urban Living Atlas</p>
+      <h1>都市住環境図鑑</h1>
+      <p class="lead">
+        現地調査・写真資料・公的統計から、都市ごとの暮らしの実像を記録します。
+      </p>
+
+      <div class="grid entries">
+        {cities.map((entry) => (
+          <Card
+            title={entry.data.title}
+            href={`/atlas/${entry.id}/`}
+            eyebrow={`${entry.data.prefecture} / ${entry.data.city}`}
+          >
+            {entry.data.description}
+          </Card>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .entries {
+    margin-top: 2.5rem;
+  }
+</style>

@@ -1,0 +1,31 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Card from "../../components/ui/Card.astro";
+
+const posts = (await getCollection("blog"))
+  .filter((entry) => !entry.data.draft)
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+---
+<BaseLayout title="個人ブログ">
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Blog</p>
+      <h1>個人ブログ</h1>
+      <p class="lead">活動記録、制作過程、移動生活について記録します。</p>
+      <div class="grid entries">
+        {posts.map((entry) => (
+          <Card
+            title={entry.data.title}
+            href={`/blog/${entry.id}/`}
+            eyebrow={entry.data.category}
+          >
+            {entry.data.description}
+          </Card>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>.entries { margin-top: 2.5rem; }</style>

@@ -1,0 +1,26 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  publishedAt?: Date;
+}
+
+const { title, description, publishedAt } = Astro.props;
+---
+<BaseLayout title={title} description={description}>
+  <article class="section">
+    <div class="container prose">
+      <p class="eyebrow">RE-LIVE ARCHIVE</p>
+      <h1>{title}</h1>
+      <p class="lead">{description}</p>
+      {publishedAt && (
+        <p class="meta">
+          公開日：{publishedAt.toLocaleDateString("ja-JP")}
+        </p>
+      )}
+      <slot />
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,50 @@
+---
+import { site } from "../../data/site";
+---
+<footer>
+  <div class="container footer-inner">
+    <div>
+      <strong>{site.brand}</strong>
+      <p>{site.name}</p>
+    </div>
+    <div class="links">
+      <a href="/theme/">Design System</a>
+      <a href="/about/">About</a>
+    </div>
+    <small>© {new Date().getFullYear()} {site.name}</small>
+  </div>
+</footer>
+
+<style>
+  footer {
+    border-top: 1px solid var(--color-line);
+    padding-block: 2.5rem;
+  }
+
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem 2rem;
+  }
+
+  p {
+    margin: 0;
+    color: var(--color-muted);
+    font-size: 0.85rem;
+  }
+
+  .links {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .links a {
+    color: var(--color-muted);
+    font-size: 0.85rem;
+  }
+
+  small {
+    grid-column: 1 / -1;
+    color: var(--color-muted);
+  }
+</style>

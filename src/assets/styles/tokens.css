@@ -1,0 +1,21 @@
+:root {
+  --color-ink: #1f2923;
+  --color-muted: #68736c;
+  --color-paper: #f5f2e9;
+  --color-surface: #fffdf7;
+  --color-line: #d8d4c8;
+  --color-primary: #324b3d;
+  --color-primary-soft: #dfe7df;
+  --color-accent: #a65f3b;
+
+  --font-sans: "Yu Gothic", "YuGothic", "Hiragino Kaku Gothic ProN",
+    "Noto Sans JP", system-ui, sans-serif;
+  --font-serif: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN",
+    "Noto Serif JP", serif;
+
+  --content-width: 72rem;
+  --content-narrow: 48rem;
+  --radius-sm: 0.35rem;
+  --radius-md: 0.8rem;
+  --shadow-soft: 0 12px 32px rgb(31 41 35 / 0.08);
+}

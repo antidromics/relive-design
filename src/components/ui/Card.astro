@@ -1,0 +1,46 @@
+---
+interface Props {
+  title: string;
+  href?: string;
+  eyebrow?: string;
+}
+
+const { title, href, eyebrow } = Astro.props;
+const Tag = href ? "a" : "article";
+---
+<Tag class="card" href={href}>
+  {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+  <h3>{title}</h3>
+  <div class="body"><slot /></div>
+</Tag>
+
+<style>
+  .card {
+    display: block;
+    min-height: 100%;
+    padding: 1.5rem;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-soft);
+    text-decoration: none;
+  }
+
+  a.card {
+    transition: translate 160ms ease, border-color 160ms ease;
+  }
+
+  a.card:hover {
+    border-color: var(--color-primary);
+    translate: 0 -3px;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  .body {
+    color: var(--color-muted);
+    font-size: 0.94rem;
+  }
+</style>

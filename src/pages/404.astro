@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Button from "../components/ui/Button.astro";
+---
+<BaseLayout title="ページが見つかりません">
+  <section class="section">
+    <div class="container prose">
+      <p class="eyebrow">404</p>
+      <h1>ページが見つかりません</h1>
+      <p class="lead">URLが変更されたか、ページがまだ公開されていません。</p>
+      <Button href="/">トップページへ戻る</Button>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,87 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Card from "../../components/ui/Card.astro";
+import Button from "../../components/ui/Button.astro";
+---
+<BaseLayout title="RE-LIVE Design System">
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Theme</p>
+      <h1>RE-LIVE Design System</h1>
+      <p class="lead">
+        地域住環境情報設計のWebサイトと研究成果物で使用する、
+        色彩・書体・コンポーネントの確認ページです。
+      </p>
+
+      <section class="sample">
+        <h2>Color</h2>
+        <div class="swatches">
+          <div class="swatch primary">Primary</div>
+          <div class="swatch paper">Paper</div>
+          <div class="swatch surface">Surface</div>
+          <div class="swatch accent">Accent</div>
+        </div>
+      </section>
+
+      <section class="sample">
+        <h2>Typography</h2>
+        <h1>都市の暮らしを記録する</h1>
+        <h2>現地調査から見える、暮らしの実像</h2>
+        <p class="lead">
+          本文は可読性を優先したゴシック体、見出しは記録性を感じる明朝体を使用します。
+        </p>
+      </section>
+
+      <section class="sample">
+        <h2>Buttons</h2>
+        <div class="row">
+          <Button href="#components">Primary Button</Button>
+          <Button href="#components" variant="secondary">Secondary Button</Button>
+        </div>
+      </section>
+
+      <section class="sample" id="components">
+        <h2>Cards</h2>
+        <div class="grid">
+          <Card title="都市カード" eyebrow="Atlas">都市情報の概要を表示します。</Card>
+          <Card title="研究カード" eyebrow="Research">論文や調査方法を表示します。</Card>
+          <Card title="ブログカード" eyebrow="Blog">活動記録を表示します。</Card>
+        </div>
+      </section>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .sample {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-line);
+  }
+
+  .swatches {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 1rem;
+  }
+
+  .swatch {
+    display: grid;
+    min-height: 8rem;
+    place-items: end start;
+    padding: 1rem;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-md);
+  }
+
+  .primary { background: var(--color-primary); color: white; }
+  .paper { background: var(--color-paper); }
+  .surface { background: var(--color-surface); }
+  .accent { background: var(--color-accent); color: white; }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+</style>
