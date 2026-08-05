@@ -13,7 +13,7 @@ const {
   description = "地域の暮らしを現地で調べ、記録し、人と組織が判断できる情報へと整えます。",
 } = Astro.props;
 
-const pageTitle = `${title} | ${site.name}`;
+const pageTitle = site.name;
 const canonicalURL = new URL(Astro.url.pathname, site.url);
 ---
 
